@@ -21,6 +21,27 @@ module.exports = function (app, handler) {
     if (!handler) {
         throw new Error('Service not found!');
     }
+    
+    /*	
+    //testing tumblr user info 
+    app.get('/test', function (req, res) {
+    if (!tumblrOauthAccessToken || !tumblrOauthAccessTokenSecret) {
+        res.redirect('/auth/request');
+    }
+
+    var client = tumblr.createClient({
+        consumer_key: 'G5DTquGeU2TaVZa2m91DGadxaIh3Yv7sxhT2D4QbW4lmys9Wck',
+        consumer_secret: '7hxOb0QDwJ65BbK2RWyvi9QbxOoxJ2T1UZYUzNGBsSjgtwRMLr',
+        token: '0UT2vXL9kN66aPBcHpZWXQyNz9gnjrnVVpQrVR7ANaMARofXVl',
+        token_secret: 's5J9fFYiEefBCqKn1ldOwHLiIAn2wAlo1tJJ5VK9zqXWCx0yR0'
+    });
+
+    client.userInfo(function (err, data) {
+        res.send(data);
+    });
+    });
+    */
+
 
     app.post('/accept', function (req, res) {
         logger.debug("accept:", req.body);
