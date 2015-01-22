@@ -22,7 +22,7 @@ module.exports = function (app, handler) {
         throw new Error('Service not found!');
     }
     
-
+    /*	
     //testing tumblr user info 
     app.get('/test', function (req, res) {
     if (!tumblrOauthAccessToken || !tumblrOauthAccessTokenSecret) {
@@ -40,10 +40,11 @@ module.exports = function (app, handler) {
         res.send(data);
     });
     });
+    */
 
 
     app.post('/accept', function (req, res) {
-        logger.debug("accept:", req.body);
+        logger.debug("accept:", req.body); 
         var accepted = handler.accept(req.body);
         logger.debug("accepted:", accepted);
         res.status(200).send({accepted: accepted});

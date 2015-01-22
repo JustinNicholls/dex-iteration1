@@ -44,7 +44,7 @@ module.exports = function (app, handler) {
 
 
     app.post('/accept', function (req, res) {
-        logger.debug("accept:", req.body);
+        logger.debug("accept:", req.body); 
         var accepted = handler.accept(req.body);
         logger.debug("accepted:", accepted);
         res.status(200).send({accepted: accepted});
