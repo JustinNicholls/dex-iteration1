@@ -56,28 +56,16 @@ module.exports = function (app, handler) {
     handler.deliver(req.body.params, req.body.playlist, function(err, result) {
       if (err) {
         console.log("NO SUCCESS :( " );
-        //console.log("the motherfucking error: " + err);
-        //console.log(JSON.stringify(err) ); //json stringify the err, which should show the text_options, image_options or video_options
-
-        //the code below doesn't work
-        //var text_options = JSON.stringify(err);
-        //console.log(text_options[2]);
-
-        //client.text('alexf388.tumblr.com', text_options, function (err2, data) {
-          //if you uncomment this line, error: can't set headers after they are sent.
-          //res.send(data);
-
-        //});
-
-
         next(err);
 
       } else {
         console.log("GREAT SUCCESS :) ");
+        console.log('delivered: ', result);
         logger.debug("delivered:", result);
 
-
-        res.status(200).send(result);
+        //original res.send
+        result = JSON.stringify(result);
+        res.status(200).send(result); //should send the scObjectId and postId
       }
     });
   });

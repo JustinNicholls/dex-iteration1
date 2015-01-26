@@ -104,20 +104,23 @@
         ],
         "video": [
           {
-            "url": "https://www.youtube.com/watch?v=oZooziH4ADE",
-            "id": "3d556ff0-8b97-4a0e-9531-714f36d70324",
-            "kind": "multimediabody#image",
+            "url": "https://www.youtube.com/watch?v=oavMtUWDBTM",
+            "id": "5dbb1870-dd80-485a-a5d8-72bd01cc07f2",
+            "kind": "multimediabody#video",
             "property": {
-              "isAssignedTo": "http://dexit.co/smartcontent/ca9e74b6-d275-4472-be9c-e49257eabac5",
-              "name": "WRC Craziest Moments",
+              "isAssignedTo": "http://dexit.co/smartcontent/ae21abf4-9d29-492e-9c8d-59243c94ab54",
+              "name": "Original Troll video",
               "context": "device",
               "identity": "",
               "class": "",
+              "location": "http://test.com/test.mp4",
+              "autoplay": "true",
+              "controls": "true",
               "tag": "mm-0",
-              "location": "http://dam.dexit.co.s3.amazonaws.com/developer/img/torontoas2.jpg",
-              "alt": "",
-              "ismap": "false",
-              "usemap": "false",
+              "loop": "true",
+              "muted": "true",
+              "poster": "true",
+              "preload": "",
               "width": "",
               "height": ""
             }
