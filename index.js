@@ -15,5 +15,6 @@ module.exports = {
 
     // utilities for third-party handlers
     translateFeedback: require('./lib/content-feedback'),
-    socialChannelsLayoutAdapter: require('./lib/social-channels-layout-adapter')
+    socialChannelsLayoutAdapter: require('./lib/social-channels-layout-adapter'),
+    KBUtils: require ('./lib/kb-utils.js')
 };

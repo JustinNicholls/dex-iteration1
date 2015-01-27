@@ -64,7 +64,7 @@ module.exports = function (app, handler) {
         logger.debug("delivered:", result);
 
         //original res.send
-        result = JSON.stringify(result);
+        //result = JSON.stringify(result);
         res.status(200).send(result); //should send the scObjectId and postId
       }
     });
