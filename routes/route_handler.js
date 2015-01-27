@@ -40,13 +40,6 @@ module.exports = function (app, handler) {
   app.post('/accept', function (req, res) {
     logger.debug("accept:", req.body);
     var accepted = handler.accept(req.body);
-    //console.log("what is accepted? " + accepted);
-
-    //deliver post goes here if true
-    //NOTE: not sure if we really need to call deliver, or DEX calls deliver below
-
-    //end if
-
 
     logger.debug("accepted:", accepted);
     res.status(200).send({accepted: accepted});

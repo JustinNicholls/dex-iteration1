@@ -1,6 +1,6 @@
 var _ = require('underscore');
 
-var protocol = require('http');
+var protocol;
 function KBUtils(config) {
 
    if (!config || !config.kb) {
@@ -43,19 +43,19 @@ function makeHttpRequest(options, body, cb) {
     body= JSON.stringify(body);
     options.headers['Content-length'] = Buffer.byteLength(body);
 
-
-    var req = protocol.request(options, function(response) {
+   protocol = require('http');
+   var req = protocol.request(options, function(response) {
         response.setEncoding('utf8');
-        var str ='';
+       var str ='';
         response.on('data',function(chunk) {
             str += chunk;
         });
         response.on('end', function() {
-            var code = response.statusCode;
-            if (code === 200 || code === 204) {
-                var err;
-                var dat;
-                try {
+           var code = response.statusCode;
+           if (code === 200 || code === 204) {
+               var err;
+               var dat;
+               try {
                     dat = JSON.parse(str);
                     err = null;
                 }catch(e){
@@ -63,21 +63,15 @@ function makeHttpRequest(options, body, cb) {
                 }
                 cb(err,dat);
             }else {
-                var errr = new Error('unexpected response code:'+code);
+               var errr = new Error('unexpected response code:'+code);
                 errr.httpCode = 500;
                 cb(errr);
             }
         });
         response.on('error', function(err){
-            return cb(err);
+           return cb(err);
         });
     });
-
-    req.on('error', function(e) {
-        return console.error(e);
-        cb(e);
-    });
-
     req.write(body);
     req.end();
 
@@ -86,8 +80,8 @@ function makeHttpRequest(options, body, cb) {
 KBUtils.prototype.executeQuery = function (token,query, queryParams, dataStore, callback) {
 
    var options = {
-        host: "developer.kb.dexit.co",
-        port: "80",
+        host: "ec2-50-16-190-77.compute-1.amazonaws.com",
+        port: "5432",
         path: "/access/stores/" + dataStore + "/query",
         method: 'POST',
         headers: {
