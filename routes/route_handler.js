@@ -77,8 +77,10 @@ module.exports = function (app, handler) {
   app.post('/remove', function(req, res, next) {
     logger.debug("remove: ", req.body);
 
-    console.log("req: ", req);
+    //console.log("req: ", req);
     console.log("req.body: ", req.body);
+    //req.body = JSON.stringify(req.body);
+    //console.log("req.body.stringify to JSON: ", req.body);
 
     handler.remove(req.body, function(err) {
       if (err) {
