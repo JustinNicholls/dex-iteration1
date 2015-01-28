@@ -12,6 +12,6 @@ var myHandler = new baseHandler.AbstractHandler();
 // extend/override the handler as necessary...
 
 // invoke the service server with my handler
-var server = baseHandler.serviceTemplate('/', myHandler, process.env.PORT);
+var server = baseHandler.serviceTemplate('//', myHandler, process.env.PORT);
 
 module.exports = server;
