@@ -1,0 +1,5 @@
+{"id":"d6h0k3191uqt2r","name":"d6h0k3191uqt2r","type":"sql","records":[
+  {"name":"Notes","type":"table","fields":[
+    {"name":"blog_name","type":[null,"array"]},
+    {"name":"postId","type":[null,"array"]}]}
+]}
